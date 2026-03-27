@@ -11,9 +11,7 @@ $stmt = $pdo->query($sql);
 <th>Nom</th>
 <th>Email</th>
 <th>telephone</th>
-<th>
-    age
-</th>
+<th>age</th>
 <th>Actions</th>
 </tr>
 
