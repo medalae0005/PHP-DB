@@ -28,7 +28,7 @@ if (isset($_GET["id"])) {
 
         <?php
             // Afficher le message d'erreur ou les détails du produit
-            if($msg != "") {
+            if(!empty($msg)) {
                 echo "<p>".$msg."</p>";
             } else {
                 echo "<h2>".$p["nom"]."</h2>";
