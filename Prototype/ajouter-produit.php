@@ -13,13 +13,13 @@ if(isset($_POST["ajouter"])){
     $categorie = $_POST["categorie"];
 
     // validation simple
-    if($nom == "") $err[] = "Nom obligatoire";
-    if($prix == "") $err[] = "Prix obligatoire";
-    if($description == "") $err[] = "Description obligatoire";
-    if($categorie == "") $err[] = "Categorie obligatoire";
+    if(empty($nom)) $err[] = "Nom obligatoire";
+    if(empty($prix)) $err[] = "Prix obligatoire";
+    if(empty($description)) $err[] = "Description obligatoire";
+    if(empty($categorie)) $err[] = "Categorie obligatoire";
 
     // si pas d'erreur ; insérer produit dans la base
-    if(count($err) == 0){
+    if(empty($err)){
         $req = $pdo->prepare("INSERT INTO Produit(nom,prix,description,categorie) VALUES(?,?,?,?)");
         $req->execute([$nom,$prix,$description,$categorie]);
 
